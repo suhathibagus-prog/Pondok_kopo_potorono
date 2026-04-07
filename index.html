@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="Pondok Kopi Potorono - Kafe pedesaan Magelang, kopi nikmat harga merakyat">
+  <title>Pondok Kopi Potorono | Kafe Ndeso Magelang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #FEFAF5; color: #2C241F; scroll-behavior: smooth; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    
+    /* HERO */
+    .hero { background: linear-gradient(125deg, #2A1F1A 0%, #4F3728 100%); color: white; padding: 3rem 0 4rem; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; font-size: 260px; opacity: 0.04; bottom: -40px; right: -30px; pointer-events: none; }
+    .badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,235,205,0.18); backdrop-filter: blur(6px); padding: 6px 16px; border-radius: 100px; font-size: 0.7rem; font-weight: 600; border: 1px solid rgba(255,215,175,0.3); margin-bottom: 1.2rem; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.5rem; }
+    .hero .tagline { font-size: 1.1rem; opacity: 0.9; font-style: italic; margin-bottom: 1rem; }
+    .rating { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 1rem 0 1.8rem; }
+    .stars { color: #F5B042; letter-spacing: 3px; }
+    .btn-group { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn { padding: 12px 28px; border-radius: 50px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.2s; font-size: 0.9rem; }
+    .btn-primary { background: #D68B45; color: #2C1E17; box-shadow: 0 6px 14px rgba(0,0,0,0.2); }
+    .btn-primary:hover { background: #E89F5A; transform: translateY(-2px); }
+    .btn-outline { background: transparent; border: 1.5px solid rgba(255,235,205,0.7); color: #FFF3E6; }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+    .hero-info { display: flex; gap: 20px; margin-top: 1.8rem; font-size: 0.85rem; opacity: 0.85; flex-wrap: wrap; }
+    
+    /* CARDS */
+    .card-glass { background: white; border-radius: 28px; padding: 1.5rem; box-shadow: 0 10px 25px -10px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #F0E4D4; }
+    .card-glass:hover { transform: translateY(-5px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1); border-color: #D6A96E; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; color: #3A2A21; margin-bottom: 2rem; border-left: 5px solid #D68B45; padding-left: 22px; }
+    
+    /* MENU */
+    .menu-category { margin-bottom: 2.8rem; }
+    .menu-category h3 { font-size: 1.6rem; font-weight: 700; color: #4F3422; margin-bottom: 1.3rem; display: flex; align-items: center; gap: 12px; border-bottom: 2px dashed #E9D3B0; padding-bottom: 8px; }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+    .menu-item { background: white; border-radius: 24px; padding: 0.9rem 1.2rem; display: flex; align-items: center; justify-content: space-between; transition: 0.2s; border: 1px solid #F0E2D2; }
+    .menu-item:hover { transform: scale(1.01); border-color: #D6A96E; background: #FFFCF8; }
+    .menu-left { display: flex; align-items: center; gap: 12px; }
+    .menu-icon { width: 36px; height: 36px; background: #FEF0E2; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #C47E3A; font-size: 1rem; }
+    .menu-name { font-weight: 700; font-size: 0.95rem; }
+    .menu-price { font-weight: 800; background: #FEF0E4; padding: 4px 12px; border-radius: 40px; color: #B55B27; font-size: 0.8rem; }
+    .signature-item { background: #FFF7EF; border-left: 3px solid #D68B45; }
+    
+    /* REVIEW */
+    .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .review-card { background: white; border-radius: 28px; padding: 1.4rem; box-shadow: 0 5px 15px rgba(0,0,0,0.03); border: 1px solid #F0E4D4; transition: 0.2s; }
+    .review-card:hover { box-shadow: 0 15px 25px -12px rgba(0,0,0,0.08); }
+    .quote { color: #D6A96E; font-size: 1.5rem; opacity: 0.5; margin-bottom: 8px; }
+    
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-top: 1rem; }
+    .info-box { background: white; border-radius: 28px; padding: 1.5rem; transition: 0.2s; }
+    .wa-btn { background: #25D366; color: white; padding: 12px 20px; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; margin-top: 12px; transition: 0.2s; }
+    .wa-btn:hover { background: #1DA15A; transform: scale(1.02); }
+    .map-btn { background: #E7D9C8; padding: 12px; border-radius: 50px; text-align: center; font-weight: 600; text-decoration: none; color: #3E2A23; display: flex; justify-content: center; gap: 8px; margin-top: 12px; transition: 0.2s; }
+    .map-btn:hover { background: #DACBAC; }
+    
+    /* FOOTER */
+    footer { background: #2A201B; color: #DBCEBD; text-align: center; padding: 2rem; border-top-left-radius: 45px; border-top-right-radius: 45px; margin-top: 2.5rem; }
+    
+    @media (max-width: 700px) {
+      .container { padding: 0 18px; }
+      .hero h1 { font-size: 2.2rem; }
+      .section-title { font-size: 1.6rem; }
+      .menu-category h3 { font-size: 1.4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-bg">☕</div>
+  <div class="container">
+    <div class="badge"><i class="fas fa-calendar-alt"></i> SEJAK 2021 <i class="fas fa-tree" style="margin-left: 6px;"></i> PEDESAAN</div>
+    <h1>Pondok Kopi<br>Potorono</h1>
+    <div class="tagline"><i class="fas fa-heart" style="color: #F5B042;"></i> Dine in or take away, it's okay?</div>
+    <div class="rating">
+      <div class="stars">★★★★★</div>
+      <span style="font-weight: 500;">4,8 <span style="opacity:0.8;">(57 ulasan)</span></span>
+      <span><i class="fas fa-check-circle" style="color:#7A9F5A;"></i> Robusta & Arabica</span>
+    </div>
+    <div class="btn-group">
+      <a href="#menu" class="btn btn-primary"><i class="fas fa-mug-hot"></i> Lihat Menu</a>
+      <a href="#lokasi" class="btn btn-outline"><i class="fas fa-map-pin"></i> Lokasi</a>
+    </div>
+    <div class="hero-info">
+      <span><i class="far fa-clock"></i> 16.00 – 23.00 (Last order 23.00)</span>
+      <span><i class="fas fa-motorcycle"></i> Dine in / Take away</span>
+      <span><i class="fas fa-wifi"></i> Wi-Fi tersedia</span>
+    </div>
+  </div>
+</div>
+
+<main>
+  <!-- ABOUT SECTION -->
+  <section style="padding: 3rem 0 1rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+        <div class="card-glass">
+          <i class="fas fa-leaf" style="font-size: 2rem; color: #7A9F5A;"></i>
+          <h3 style="margin: 12px 0 8px;">Suasana Desa</h3>
+          <p>Nikmati kopi ditemani udara pedesaan, hamparan sawah, dan keramahan khas Magelang. Tempat nongkrong favorit yang adem & estetik.</p>
+        </div>
+        <div class="card-glass">
+          <i class="fas fa-mug-saucer" style="font-size: 2rem; color: #C47E3A;"></i>
+          <h3 style="margin: 12px 0 8px;">Cita Rasa Otentik</h3>
+          <p>Perpaduan biji Robusta & Arabica pilihan, diracik dengan metode tubruk, V60, hingga espresso based yang kekinian.</p>
+        </div>
+        <div class="card-glass">
+          <i class="fas fa-hand-holding-heart" style="font-size: 2rem; color: #D68B45;"></i>
+          <h3 style="margin: 12px 0 8px;">Harga Merakyat</h3>
+          <p>Mulai dari Rp 2.000 saja! Nikmati kopi berkualitas tanpa kantong bolong. Cocok untuk semua kalangan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MENU SECTION -->
+<section id="menu" style="padding: 2rem 0 2rem; background: #FDF7EF;">
+  <div class="container">
+    <div class="section-title"><i class="fas fa-book-open"></i> Menu & Minuman</div>
+
+    <!-- Coffee Based -->
+    <div class="menu-category">
+      <h3><i class="fas fa-mug-hot"></i> Coffee Based</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-coffee"></i></div><span class="menu-name">Tubruk</span></div><span class="menu-price">2K / 5K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-filter"></i></div><span class="menu-name">V60</span></div><span class="menu-price">5K / 8K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-mug-hot"></i></div><span class="menu-name">Kopi Klasik</span></div><span class="menu-price">5K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-whiskey-glass"></i></div><span class="menu-name">Vietnam</span></div><span class="menu-price">5K / 7K</span></div>
+      </div>
+    </div>
+
+    <!-- Espresso Based -->
+    <div class="menu-category">
+      <h3><i class="fas fa-cup-togo"></i> Espresso Based</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-bolt"></i></div><span class="menu-name">Espresso</span></div><span class="menu-price">6K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-water"></i></div><span class="menu-name">Americano</span></div><span class="menu-price">7K / 8K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-heart"></i></div><span class="menu-name">Latte</span></div><span class="menu-price">9K / 10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-caramel"></i></div><span class="menu-name">Caramel Latte</span></div><span class="menu-price">9K / 10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-candy-cane"></i></div><span class="menu-name">Caramel Macchiato</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-magic"></i></div><span class="menu-name">Orequresso</span></div><span class="menu-price">10K</span></div>
+      </div>
+    </div>
+
+    <!-- Non Coffee -->
+    <div class="menu-category">
+      <h3><i class="fas fa-leaf"></i> Non Coffee</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-seedling"></i></div><span class="menu-name">Matchaca</span></div><span class="menu-price">8K / 9K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-flower"></i></div><span class="menu-name">Chomel</span></div><span class="menu-price">8K / 9K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-nut"></i></div><span class="menu-name">Hazelnut</span></div><span class="menu-price">8K / 9K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-candy"></i></div><span class="menu-name">Bonbon</span></div><span class="menu-price">6K / 7K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-mug-saucer"></i></div><span class="menu-name">Nirapresso</span></div><span class="menu-price">7K / 8K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-cloud-moon"></i></div><span class="menu-name">Nyante</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-tea"></i></div><span class="menu-name">Teh Telang</span></div><span class="menu-price">5K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-lemon"></i></div><span class="menu-name">Lemon</span></div><span class="menu-price">3K / 4K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-tea"></i></div><span class="menu-name">Lemon Tea</span></div><span class="menu-price">4K / 5K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-tree"></i></div><span class="menu-name">Nira</span></div><span class="menu-price">5K / 6K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-blender"></i></div><span class="menu-name">Lemon Smoothies</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-tint"></i></div><span class="menu-name">Fresh Milk</span></div><span class="menu-price">6K / 7K</span></div>
+      </div>
+    </div>
+
+    <!-- Food & Snack -->
+    <div class="menu-category">
+      <h3><i class="fas fa-utensils"></i> Food & Snack</h3>
+      <div class="menu-grid">
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-rice"></i></div><span class="menu-name">Nasi Goreng</span></div><span class="menu-price">12K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-egg"></i></div><span class="menu-name">Sego Godhog</span></div><span class="menu-price">12K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-ramen"></i></div><span class="menu-name">Mie Goreng</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-ramen"></i></div><span class="menu-name">Mie Godhog</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-drumstick-bite"></i></div><span class="menu-name">Chireng</span></div><span class="menu-price">6K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-potato"></i></div><span class="menu-name">Kenthang</span></div><span class="menu-price">6K</span></div>
+        <div class="menu-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-sweet-potato"></i></div><span class="menu-name">Telo</span></div><span class="menu-price">6K</span></div>
+      </div>
+    </div>
+
+    <!-- Signature Drink -->
+    <div class="menu-category">
+      <h3><i class="fas fa-crown"></i> Signature Drink</h3>
+      <div class="menu-grid">
+        <div class="menu-item signature-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-fire"></i></div><span class="menu-name">Potorono (hot)</span></div><span class="menu-price">10K</span></div>
+        <div class="menu-item signature-item"><div class="menu-left"><div class="menu-icon"><i class="fas fa-snowflake"></i></div><span class="menu-name">Pondok Kopi (ice)</span></div><span class="menu-price">10K</span></div>
+      </div>
+    </div>
+    <p style="text-align: center; margin-top: 1rem; font-size: 0.75rem; color: #B48C62;"><i class="fas fa-info-circle"></i> Harga sudah termasuk pajak | Tersedia opsi hot/ice</p>
+  </div>
+</section>
+  <!-- REVIEW SECTION -->
+  <section id="lokasi" style="padding: 2rem 0 2rem;">
+    <div class="container">
+      <div class="section-title"><i class="fas fa-comments"></i> Apa Kata Mereka?</div>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <div class="stars">★★★★★</div>
+          <p style="margin: 10px 0;">"Kopi nya cocok, tempat nyaman buat nongkrong, suasana pedesaan bikin betah. Harga bersahabat banget!"</p>
+          <span style="font-weight: 600;">— Andin, Pelanggan setia</span>
+        </div>
+        <div class="review-card">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <div class="stars">★★★★★</div>
+          <p style="margin: 10px 0;">"Signature Potorono wajib dicoba! Perpaduan rasa unik. Tempat nongkrong hits di Kajoran."</p>
+          <span style="font-weight: 600;">— Dimas, Coffee hunter</span>
+        </div>
+        <div class="review-card">
+          <div class="quote"><i class="fas fa-quote-left"></i></div>
+          <div class="stars">★★★★★</div>
+          <p style="margin: 10px 0;">"Menu lengkap, dari kopi tradisional sampai modern. Pelayanan ramah, tempat instagramable!"</p>
+          <span style="font-weight: 600;">— Sari, Wisatawan</span>
+        </div>
+      </div>
+
+      <!-- CONTACT & LOCATION -->
+      <div class="contact-grid">
+        <div class="info-box">
+          <i class="fas fa-map-pin" style="font-size: 1.8rem; color: #C47E3A;"></i>
+          <h3 style="margin: 12px 0 6px;">Lokasi Kami</h3>
+          <p>Jl. Kaliabu - Kajoran, Sambak, Kec. Kajoran, Kabupaten Magelang, Jawa Tengah 56163</p>
+          <a href="https://maps.google.com/?q=Pondok+Kopi+Potorono+Magelang" target="_blank" class="map-btn" rel="noopener"><i class="fas fa-directions"></i> Buka Google Maps</a>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-headset" style="font-size: 1.8rem; color: #25D366;"></i>
+          <h3 style="margin: 12px 0 6px;">Hubungi Kami</h3>
+          <p><i class="fas fa-phone-alt"></i> 0857-7772-9305</p>
+          <p><i class="far fa-clock"></i> Buka: 16.00 - 23.00 WIB</p>
+          <a href="https://wa.me/6285777729305?text=Halo%20Pondok%20Kopi%20Potorono,%20saya%20mau%20tanya%20menu%20dan%20order" target="_blank" class="wa-btn" rel="noopener"><i class="fab fa-whatsapp"></i> Chat via WhatsApp</a>
+        </div>
+        <div class="info-box">
+          <i class="fas fa-star" style="font-size: 1.8rem; color: #F5B042;"></i>
+          <h3 style="margin: 12px 0 6px;">Jam Operasional</h3>
+          <p><strong>Setiap Hari</strong><br>Mulai pukul 16.00 WIB<br>Last order pukul 23.00 WIB</p>
+          <p style="margin-top: 12px;"><i class="fas fa-tag"></i> Budget: Rp 1.000 - 25.000</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p><i class="fas fa-mug-hot"></i> Pondok Kopi Potorono • Sejak 2021</p>
+    <p style="margin: 10px 0; font-size: 0.75rem;">Kopi Robusta & Arabica asli • Suasana pedesaan • Harga merakyat</p>
+    <p style="font-size: 0.7rem;">Dine in or take away, it's okay? — Tentu saja! Setiap cangkir penuh kehangatan.</p>
+    <p style="margin-top: 16px; font-size: 0.7rem;">© 2025 Pondok Kopi Potorono | Kafe Ndeso Modern Magelang</p>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll untuk semua anchor link
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === "#" || targetId === "") return;
+      const target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
